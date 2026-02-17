@@ -13,7 +13,6 @@ h1 {
   margin-block-start: 2rem;
   margin-block-end: 1rem;
   color: olivedrab;
-
 }
 </style>
 </head>
@@ -22,23 +21,108 @@ h1 {
 
 <h1>Simple Table</h1>
 <table>
-<!-- Add the code for Simple Table here  -->
+  <tr>
+    <th>Album</th>
+    <th>Year</th>
+  </tr>
+  <tr>
+    <td>Rubber Soul</td>
+    <td>1965</td>
+  </tr>
+  <tr>
+    <td>Revolver</td>
+    <td>1966</td>
+  </tr>
+  <tr>
+    <td>Sgt. Pepper's</td>
+    <td>1967</td>
+  </tr>
+  <tr>
+    <td>The White Album</td>
+    <td>1968</td>
+  </tr>
+  <tr>
+    <td>Abbey Road</td>
+    <td>1969</td>
+  </tr>
 </table>
-
 
 <h1>Column Spans</h1>
 <table>
-<!-- Add the code for Column Spans here  -->
+  <tr>
+    <th>7:00pm</th>
+    <th>7:30pm</th>
+    <th>8:00pm</th>
+  </tr>
+  <tr>
+    <td colspan="2">The Sunday Night Movie</td>
+    <td>Perry Mason</td>
+  </tr>
+  <tr>
+    <td>Candid Camera</td>
+    <td>What's My Line?</td>
+    <td>Bonanza</td>
+  </tr>
+  <tr>
+    <td colspan="2">The Wackiest Ship in the Army</td>
+    <td>(Blank)</td>
+  </tr>
 </table>
 
 <h1>Row Spans</h1>
 <table>
-<!-- Add the code for Row Spans here  -->
+  <tr>
+    <td>apples</td>
+    <td rowspan="3">oranges</td>
+    <td>pears</td>
+  </tr>
+  <tr>
+    <td>bananas</td>
+    <td rowspan="2">pineapple</td>
+  </tr>
+  <tr>
+    <td>lychees</td>
+  </tr>
 </table>
 
 <h1>Table Challenge</h1>
 <table>
-<!-- Add the code for Table Challenge here  -->
+  <caption>Your Content Here</caption>
+  <colgroup>
+    <col> 
+    <col span="3"> 
+  </colgroup>
+  <thead>
+    <tr>
+      <th rowspan="2" scope="col">Header 1</th>
+      <th colspan="2" scope="colgroup">A common header for two subheads</th>
+      <th rowspan="2" scope="col">Header 3</th>
+    </tr>
+    <tr>
+      <th scope="col">Header 2</th>
+      <th scope="col">Header 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Thing A</th>
+      <td>data A1</td>
+      <td>data A2</td>
+      <td>data A3</td>
+    </tr>
+    <tr>
+      <th scope="row">Thing B</th>
+      <td>data B1</td>
+      <td>data B2</td>
+      <td>data B3</td>
+    </tr>
+    <tr>
+      <th scope="row">Thing C</th>
+      <td>data C1</td>
+      <td>data C2</td>
+      <td>data C3</td>
+    </tr>
+  </tbody>
 </table>
 
 </body>
