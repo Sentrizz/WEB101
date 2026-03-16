@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+    background-color: #FFF9E6;
+    color: #3B3B3B;
+    margin: 0;
+    padding: 0;
+}
+
+#header-container {
+    background-color: #5BA4A4;
+    color: #FFF9E6;
+    padding: 20px;
+    text-align: center;
+}
+
+.org-name { margin: 0; }
+.logo { max-width: 120px; margin-top: 10px; }
+
+#main-nav {
+    background-color: #3B3B3B;
+    padding: 15px;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #FFF9E6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover { color: #C06C48; }
+
+main {
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+section { margin-bottom: 40px; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #5BA4A4;
+    text-align: left;
+}
+
+tr:nth-child(even) { background-color: #e2efef; }
+
+tr.highlight-event {
+    background-color: #C06C48 !important;
+    color: #FFF9E6 !important;
+    font-weight: bold;
+}
+
+.member-photo, .pet-photo, .rescue-img {
+    max-width: 200px;
+    border-radius: 8px;
+    display: block;
+    margin: 10px 0;
+}
+
+.team-member { margin-bottom: 30px; }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+}
+
+#footer-container {
+    background-color: #3B3B3B;
+    color: #FFF9E6;
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-nav a, .social-media a {
+    color: #FFF9E6;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-nav a:hover, .social-media a:hover { color: #5BA4A4; }
