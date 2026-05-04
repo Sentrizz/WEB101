@@ -23,13 +23,13 @@ h2 {
   font-size: 1.2em;
   margin-top: 0;
 }
-/* Step 2 & 3: Make the #menu wrapper a flex container and allow wrapping */
 #menu {
   border: 3px solid #783F27;
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
 }
-/* Step 7 & 9: Nested flex container with vertical direction, flexible to fill space */
 section {
   background: #F6F3ED;
   margin: 10px;
@@ -45,7 +45,6 @@ section {
   color: #F9AB33;
   line-height: 4em;
 }
-/* Step 8: Push price to the bottom */
 .price {
   font-weight: bold;
   background: #F9AB33;
@@ -54,7 +53,6 @@ section {
   text-align: center;
   margin-top: auto;
 }
-/* Step 10: Move photos to the top */
 .photo {
   order: -1;
 }
