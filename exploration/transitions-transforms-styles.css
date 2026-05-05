@@ -1,0 +1,79 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 2em;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* ----------------------------- */
+/* BUTTON STYLES & ANIMATIONS    */
+/* ----------------------------- */
+.button {
+  display: inline-block;
+  padding: 1em 2em;
+  margin: 1em;
+  background-color: #9dc3e6;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  
+  /* Added smooth transitions for background color and scaling */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Added a background color change and scale up on hover/focus to make buttons feel interactive */
+.button:hover, .button:focus {
+  background-color: #72a8d4;
+  transform: scale(1.05);
+}
+
+/* Added a scale down on active to simulate a physical button press */
+.button:active {
+  transform: scale(0.95);
+}
+
+
+/* ----------------------------- */
+/* CARD STYLES & ANIMATIONS      */
+/* ----------------------------- */
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  padding: 1em;
+  width: 200px;
+  margin: 1em;
+  text-align: center;
+  display: inline-block;
+  
+  /* Added transition for transform and box-shadow for smooth floating effect */
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+/* Added a lift effect (translateY) and deeper shadow on hover for a 3D popping feel */
+.card:hover, .card:focus {
+  transform: translateY(-10px);
+  box-shadow: 4px 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ----------------------------- */
+/* IMAGE STYLES & ANIMATIONS     */
+/* ----------------------------- */
+img {
+  width: 100%;
+  border-radius: 8px;
+  /* Added a transition so the image moves smoothly when the card is hovered */
+  transition: transform 0.5s ease;
+}
+
+/* Added a slight rotation and zoom to the image when the parent card is hovered */
+.card:hover img, .card:focus img {
+  transform: scale(1.05) rotate(2deg);
+}
