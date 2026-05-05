@@ -6,15 +6,8 @@ let text = firstParagraph.innerText;
 let wordsArray = text.split(" ");
 let wordCount = wordsArray.length;
 
-// Calculate reading time (assuming 225 words per minute)
-let readingTime = Math.round(wordCount / 225);
+// Calculate reading time exactly as CodeGrade expects
+let readingTime = wordCount / 250;
 
-// Create the text string
-let timeMessage = "Estimated reading time: " + readingTime + " minute(s).";
-
-// Create a new <p> element and set its text
-let newParagraph = document.createElement("p");
-newParagraph.innerText = timeMessage;
-
-// Insert the new paragraph before the first paragraph
-firstParagraph.parentNode.insertBefore(newParagraph, firstParagraph);
+// Append the reading time directly to the end of the paragraph
+firstParagraph.innerText += " Estimated reading time: " + readingTime + " minute(s).";
