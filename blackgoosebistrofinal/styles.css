@@ -1,0 +1,241 @@
+/* ==========================================================================
+   Global Theme Styles
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0 10%;
+  font-family: sans-serif;
+  line-height: 1.75rem;
+  color: floralwhite;
+  background-color: darkslategray;
+}
+
+/* ==========================================================================
+   Header & Navigation (Step 2 Requirement)
+   ========================================================================== */
+header {
+  background-color: #faf2e4;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 36px;
+  border-radius: 0 0 8px 8px;
+}
+header h1 {
+  color: darkslategray;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 15px 0 0 0;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #333;
+  border-radius: 4px;
+}
+nav li {
+  display: inline;
+}
+nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+nav a:hover, nav a:focus {
+  background-color: orange;
+  color: darkslategray;
+}
+
+/* ==========================================================================
+   Headings & Content Elements
+   ========================================================================== */
+h2 {
+  color: orange;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 30px;
+}
+h3 {
+  color: #f0e68c;
+  font-size: 1.2rem;
+}
+p {
+  margin: 1em 0;
+}
+a {
+  color: #f0e68c;
+  text-decoration: underline;
+}
+a:hover {
+  color: orange;
+}
+
+/* Gallery layouts */
+.gallery-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.gallery-item img {
+  border: 3px solid #faf2e4;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Description Lists (Menu styles) */
+dl {
+  margin: 20px auto;
+  max-width: 600px;
+}
+dt {
+  font-weight: bold;
+  color: orange;
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+dd {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.price {
+  font-weight: bold;
+  color: #f0e68c;
+}
+
+/* Specials Tables */
+table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+th, td {
+  padding: 12px;
+  border: 1px solid #faf2e4;
+  text-align: left;
+}
+th {
+  background-color: #faf2e4;
+  color: darkslategray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   Pizza Order Form Styling (Step 4 Requirement)
+   ========================================================================== */
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: #faf2e4;
+  color: darkslategray;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+fieldset {
+  border: 2px solid darkslategray;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+legend {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 10px;
+  color: darkslategray;
+}
+form ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+form li {
+  margin-bottom: 15px;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 10px;
+  display: inline-block;
+  width: auto;
+}
+form p label {
+  display: inline-block;
+  font-weight: normal;
+}
+input[type="submit"] {
+  background-color: darkslategray;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+input[type="submit"]:hover {
+  background-color: orange;
+  color: darkslategray;
+}
+
+/* ==========================================================================
+   Footer Settings (Step 3 Requirement)
+   ========================================================================== */
+footer {
+  border-top: 1px solid turquoise;
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px 8px 0 0;
+}
+footer p {
+  margin: 5px 0;
+}
+.social-icons {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s;
+}
+.social-icons img:hover {
+  transform: scale(1.1);
+}
