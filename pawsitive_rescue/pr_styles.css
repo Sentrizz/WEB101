@@ -1,3 +1,4 @@
+/* --- BASE STYLES --- */
 body {
     font-family: Arial, Verdana, sans-serif;
     background-color: #FFF9E6;
@@ -16,6 +17,24 @@ body {
 .org-name { margin: 0; }
 .logo { max-width: 120px; margin-top: 10px; }
 
+main {
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+section { margin-bottom: 40px; }
+
+/* Constrain the large welcome image on the home page */
+.rescue-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* --- 2. FLEXBOX & TRANSITIONS (Navigation & Forms) --- */
 #main-nav {
     background-color: #3B3B3B;
     padding: 15px;
@@ -27,6 +46,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
     gap: 20px;
 }
 
@@ -34,54 +54,99 @@ body {
     color: #FFF9E6;
     text-decoration: none;
     font-weight: bold;
+    display: inline-block;
+    /* Transition for smooth hover effects */
+    transition: color 0.3s ease, transform 0.3s ease; 
 }
 
-.nav-link:hover { color: #C06C48; }
-
-main {
-    padding: 30px;
-    max-width: 900px;
-    margin: auto;
+.nav-link:hover { 
+    color: #C06C48; 
+    /* Transform for interactivity */
+    transform: scale(1.1); 
 }
 
-section { margin-bottom: 40px; }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 12px;
-    border: 1px solid #5BA4A4;
-    text-align: left;
-}
-
-tr:nth-child(even) { background-color: #e2efef; }
-
-tr.highlight-event {
-    background-color: #C06C48 !important;
-    color: #FFF9E6 !important;
-    font-weight: bold;
-}
-
-.member-photo, .pet-photo, .rescue-img {
-    max-width: 200px;
-    border-radius: 8px;
-    display: block;
-    margin: 10px 0;
-}
-
-.team-member { margin-bottom: 30px; }
-
+/* Flexbox for the Volunteer Form */
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     max-width: 500px;
+    background-color: #e2efef;
+    padding: 20px;
+    border-radius: 8px;
 }
 
+/* --- 1. BOXES, FLOATING, AND POSITIONING --- */
+/* Floated Image for Home Page (pr_index.html) */
+.featured-pet-container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.pet-photo-float {
+    float: left;
+    margin: 0 20px 10px 0;
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+/* Absolute Positioning for Team Members (pr_about.html) */
+.team-member { 
+    position: relative; 
+    padding-left: 220px; /* Makes room for the absolute image */
+    min-height: 200px;
+    margin-bottom: 30px; 
+}
+
+.member-photo-pos { 
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    width: 200px; 
+    height: 150px; /* Forces all images to be the same height */
+    object-fit: cover; /* Crops the images neatly to fit the box without stretching */
+    border-radius: 8px; 
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+/* --- 3. GRID LAYOUT (Adopt Page) --- */
+.pet-grid {
+    display: grid;
+    /* Multi-column layout that adapts to screen size */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.pet-card {
+    border: 2px solid #5BA4A4;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+    /* Transition for smooth hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Transform for interactivity on pet cards */
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.pet-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Events Table Styling */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 12px; border: 1px solid #5BA4A4; text-align: left; }
+tr:nth-child(even) { background-color: #e2efef; }
+tr.highlight-event { background-color: #C06C48; color: #FFF9E6; font-weight: bold; }
+
+/* --- FOOTER --- */
 #footer-container {
     background-color: #3B3B3B;
     color: #FFF9E6;
@@ -90,10 +155,30 @@ form {
     margin-top: 40px;
 }
 
-.footer-nav a, .social-media a {
-    color: #FFF9E6;
-    text-decoration: none;
-    margin: 0 10px;
+.footer-nav a, .social-media a { color: #FFF9E6; text-decoration: none; margin: 0 10px; transition: color 0.3s ease; }
+.footer-nav a:hover, .social-media a:hover { color: #5BA4A4; }
+
+/* --- 4. RESPONSIVE WEB DESIGN (Media Queries) --- */
+
+/* Medium screens (tablet): 481-768px */
+@media screen and (max-width: 768px) {
+    /* Undo absolute positioning for team members */
+    .team-member { padding-left: 0; text-align: center; }
+    .member-photo-pos { position: static; margin: 0 auto 15px auto; display: block; }
+    
+    /* Undo float for featured pet */
+    .pet-photo-float { float: none; display: block; margin: 0 auto 15px auto; }
 }
 
-.footer-nav a:hover, .social-media a:hover { color: #5BA4A4; }
+/* Small screens (mobile): 320-480px */
+@media screen and (max-width: 480px) {
+    /* Stack navigation vertically */
+    .nav-list { flex-direction: column; gap: 10px; }
+    #header-container { padding: 10px; }
+    
+    /* Stack table columns for mobile viewing (optional simplified view) */
+    table, thead, tbody, th, td, tr { display: block; }
+    th { display: none; }
+    td { border: none; border-bottom: 1px solid #5BA4A4; position: relative; padding-left: 50%; }
+    td::before { position: absolute; top: 12px; left: 12px; font-weight: bold; }
+}
