@@ -75,5 +75,33 @@
         </div>
         <p class="copyright">&copy; 2026 Pawsitive Rescue. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Prevent the form from submitting immediately
+            event.preventDefault(); 
+            
+            // Gather data from the form
+            const name = document.getElementById('name').value;
+            const roleDropdown = document.getElementById('role');
+            const role = roleDropdown.options[roleDropdown.selectedIndex].text;
+            
+            // Find which radio button is checked
+            let availability = "unspecified times";
+            const availRadios = document.getElementsByName('availability');
+            for (let i = 0; i < availRadios.length; i++) {
+                if (availRadios[i].checked) {
+                    availability = availRadios[i].value;
+                    break;
+                }
+            }
+
+            // Display the dynamic summary
+            alert("Thank you, " + name + "!\n\nYou have signed up for: " + role + "\nAvailability: " + availability + "\n\nWe will be in touch shortly.");
+            
+            // Optional: Actually submit the form after the alert
+            // this.submit(); 
+        });
+    </script>
 </body>
 </html>
