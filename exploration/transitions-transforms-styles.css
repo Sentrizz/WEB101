@@ -23,19 +23,19 @@ h1 {
   color: white;
   font-weight: bold;
   
-  /* Added smooth transitions for background color and scaling */
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Choice 1: Smooth horizontal translation tracking paired with background morphs */
+  transition: background-color 0.3s ease, transform 0.3s ease-out;
 }
 
-/* Added a background color change and scale up on hover/focus to make buttons feel interactive */
+/* Slide the button horizontally on hover/focus to create an interactive tracking effect */
 .button:hover, .button:focus {
   background-color: #72a8d4;
-  transform: scale(1.05);
+  transform: translateX(8px);
 }
 
-/* Added a scale down on active to simulate a physical button press */
+/* Provides tactile click depth feedback by backing off the translation slightly */
 .button:active {
-  transform: scale(0.95);
+  transform: translateX(4px);
 }
 
 
@@ -52,16 +52,19 @@ h1 {
   margin: 1em;
   text-align: center;
   display: inline-block;
+  outline: none;
   
-  /* Added transition for transform and box-shadow for smooth floating effect */
-  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+  /* Choice 2: Angular rotation tilt combined with border container color flashes */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-/* Added a lift effect (translateY) and deeper shadow on hover for a 3D popping feel */
+/* Tilts the card container off-axis to break the strict grid alignment organically */
 .card:hover, .card:focus {
-  transform: translateY(-10px);
-  box-shadow: 4px 8px 16px rgba(0,0,0,0.2);
+  transform: rotate(-2deg);
+  border-color: #72a8d4;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
+
 
 /* ----------------------------- */
 /* IMAGE STYLES & ANIMATIONS     */
@@ -69,11 +72,14 @@ h1 {
 img {
   width: 100%;
   border-radius: 8px;
-  /* Added a transition so the image moves smoothly when the card is hovered */
-  transition: transform 0.5s ease;
+  
+  /* Choice 3: Isometric focal zoom matching brightness filter lighting pops */
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.9);
 }
 
-/* Added a slight rotation and zoom to the image when the parent card is hovered */
+/* Triggers an isolated magnification zoom layout inside the tilting card component */
 .card:hover img, .card:focus img {
-  transform: scale(1.05) rotate(2deg);
+  transform: scale(1.06);
+  filter: brightness(1.05);
 }
